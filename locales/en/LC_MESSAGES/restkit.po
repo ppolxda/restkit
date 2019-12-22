@@ -1,0 +1,495 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: restkit\n"
+"POT-Creation-Date: 2019-10-25 18:36+0800\n"
+"PO-Revision-Date: 2019-10-25 18:36+0800\n"
+"Last-Translator: \n"
+"Language-Team: restkit\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _L\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: restkit/handlers/http_mrg_handlers/http_report_handlers/report_csv_delete.py:34
+#: restkit/handlers/http_mrg_handlers/http_report_handlers/report_csv_query.py:35
+#: restkit/handlers/http_mrg_handlers/http_report_handlers/report_csv_query.py:86
+#: restkit/handlers/http_user_handlers/http_report_handlers/report_csv_delete.py:32
+#: restkit/handlers/http_user_handlers/http_report_handlers/report_csv_query.py:33
+#: restkit/handlers/http_user_handlers/http_report_handlers/report_csv_query.py:84
+msgid "99.Report Csv Manage"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_report_handlers/report_csv_delete.py:35
+#: restkit/handlers/http_user_handlers/http_report_handlers/report_csv_delete.py:33
+msgid "Delete Csv File"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_report_handlers/report_csv_query.py:36
+#: restkit/handlers/http_user_handlers/http_report_handlers/report_csv_query.py:34
+msgid "Query Csv List"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_report_handlers/report_csv_query.py:87
+#: restkit/handlers/http_user_handlers/http_report_handlers/report_csv_query.py:85
+msgid "Downlod Csv File"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:42
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_cnname_config_handler.py:38
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:189
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_sign_handler.py:35
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:42
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_cnname_config_handler.py:38
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:189
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_sign_handler.py:35
+msgid "1.Development and debugging"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:43
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:43
+msgid "Client Api Config"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:63
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:63
+msgid "error code"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:64
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_client_api_config_handler.py:64
+msgid "error desc"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_cnname_config_handler.py:39
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_cnname_config_handler.py:39
+msgid "Cnname Config"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:190
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:190
+msgid "Insomnia Client Config"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:193
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:193
+msgid "Config language"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:194
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:194
+msgid "Domain"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:195
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:195
+msgid "Nginx_uri"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:196
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:196
+msgid "Ssh_tag(http|https)"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:197
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:197
+msgid "Env Key(disable:use full url config)"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:198
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:198
+msgid "Output Config Pathname"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:199
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:199
+msgid "Output Config ProjectName"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:201
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:201
+msgid "Output Config generate Env Config"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:260
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:260
+msgid "Error code"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:261
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_restful_handler.py:261
+msgid "Error desc"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_sign_handler.py:29
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_sign_handler.py:29
+msgid "account"
+msgstr ""
+
+#: restkit/handlers/http_mrg_handlers/http_system_handlers/devel_tools/sys_sign_handler.py:36
+#: restkit/handlers/http_user_handlers/http_system_handlers/devel_tools/sys_sign_handler.py:36
+msgid "Package Sign"
+msgstr ""
+
+#: restkit/tools/error_info.py:274
+msgid "Sucess"
+msgstr ""
+
+#: restkit/tools/error_info.py:275
+msgid "Unknow error"
+msgstr ""
+
+#: restkit/tools/error_info.py:276
+msgid "Disabe request"
+msgstr ""
+
+#: restkit/tools/error_info.py:277
+msgid "Request timeout"
+msgstr ""
+
+#: restkit/tools/error_info.py:278
+#, python-brace-format
+msgid "Exception[{desc}]"
+msgstr ""
+
+#: restkit/tools/error_info.py:279
+msgid "Account Unlogged"
+msgstr ""
+
+#: restkit/tools/error_info.py:280
+msgid "Database operation failed"
+msgstr ""
+
+#: restkit/tools/error_info.py:281
+msgid "Unknow page"
+msgstr ""
+
+#: restkit/tools/error_info.py:282
+#, python-brace-format
+msgid "Operation failed or data not change [{table}]"
+msgstr ""
+
+#: restkit/tools/error_info.py:283
+msgid "Missing required fields"
+msgstr ""
+
+#: restkit/tools/error_info.py:284
+msgid "This account has been disabled"
+msgstr ""
+
+#: restkit/tools/error_info.py:285
+msgid "This account has been freezed"
+msgstr ""
+
+#: restkit/tools/error_info.py:286
+msgid "Password incorrect"
+msgstr ""
+
+#: restkit/tools/error_info.py:287
+msgid "User Not Found"
+msgstr ""
+
+#: restkit/tools/error_info.py:288
+msgid "Ip has been disabled"
+msgstr ""
+
+#: restkit/tools/error_info.py:289
+msgid "Ip has been freezed"
+msgstr ""
+
+#: restkit/tools/error_info.py:290
+msgid "Ip has been limit"
+msgstr ""
+
+#: restkit/tools/error_info.py:291
+#, python-brace-format
+msgid "Input invaild[{desc}]"
+msgstr ""
+
+#: restkit/tools/error_info.py:292
+msgid "Product invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:293
+msgid "This Api has been disabled"
+msgstr ""
+
+#: restkit/tools/error_info.py:294
+#, python-brace-format
+msgid "Input invaild. data duplicate [{desc}]"
+msgstr ""
+
+#: restkit/tools/error_info.py:295
+msgid "Input logincode invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:296
+msgid "Input password invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:297
+msgid "Input idcard invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:298
+msgid "Input email invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:299
+msgid "Input info invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:300
+#, python-brace-format
+msgid "Object not found[{table}]"
+msgstr ""
+
+#: restkit/tools/error_info.py:301
+msgid "User not found"
+msgstr ""
+
+#: restkit/tools/error_info.py:302
+msgid "Review application not found"
+msgstr ""
+
+#: restkit/tools/error_info.py:303
+msgid "Review application has been reviewed"
+msgstr ""
+
+#: restkit/tools/error_info.py:304
+#, python-brace-format
+msgid "trade error[{text}]"
+msgstr ""
+
+#: restkit/tools/error_info.py:305
+#, python-brace-format
+msgid "file system error[{text}]"
+msgstr ""
+
+#: restkit/tools/error_info.py:306
+msgid "eport export task too many. Please delete task"
+msgstr ""
+
+#: restkit/tools/error_info.py:307
+msgid "Auth error"
+msgstr ""
+
+#: restkit/tools/error_info.py:308
+msgid "Auth Token error"
+msgstr ""
+
+#: restkit/tools/error_info.py:309
+msgid "Request sign error"
+msgstr ""
+
+#: restkit/tools/error_info.py:310
+msgid "Safe limit. Please sign in"
+msgstr ""
+
+#: restkit/tools/error_info.py:311
+msgid "Product api limit"
+msgstr ""
+
+#: restkit/tools/error_info.py:312
+msgid "Product User not found"
+msgstr ""
+
+#: restkit/tools/error_info.py:313
+msgid "Insufficient user rights to operate"
+msgstr ""
+
+#: restkit/tools/error_info.py:314
+msgid "Verification Code expired"
+msgstr ""
+
+#: restkit/tools/error_info.py:315
+msgid "Verification Limit"
+msgstr ""
+
+#: restkit/tools/error_info.py:316
+msgid "Verification Code invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:317
+msgid "Send interval too short"
+msgstr ""
+
+#: restkit/tools/error_info.py:318
+#, python-brace-format
+msgid "Sent code Too many times, Please watting {sec}"
+msgstr ""
+
+#: restkit/tools/error_info.py:319
+#, python-brace-format
+msgid "{to} Sent code Too many times, Please watting {sec}"
+msgstr ""
+
+#: restkit/tools/error_info.py:320
+#, python-brace-format
+msgid "{info} info is binded"
+msgstr ""
+
+#: restkit/tools/error_info.py:321
+#, python-brace-format
+msgid "{info} info is not binded"
+msgstr ""
+
+#: restkit/tools/error_info.py:322
+#, python-brace-format
+msgid "{info} not Match"
+msgstr ""
+
+#: restkit/tools/error_info.py:323
+msgid "Can not unbind, Because Email or Phone must keep one"
+msgstr ""
+
+#: restkit/tools/error_info.py:324
+msgid "Email or Phone not Found"
+msgstr ""
+
+#: restkit/tools/error_info.py:325
+msgid "Forget Password operate limit"
+msgstr ""
+
+#: restkit/tools/error_info.py:326
+msgid "Password decode Error"
+msgstr ""
+
+#: restkit/tools/error_info.py:327
+msgid "Pubkey Invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:328
+msgid "Token Invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:329
+msgid "Token Expired"
+msgstr ""
+
+#: restkit/tools/error_info.py:330
+msgid "Gcode Invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:331
+msgid "Apikey Invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:332
+#, python-brace-format
+msgid "{key} Invaild"
+msgstr ""
+
+#: restkit/tools/error_info.py:333
+msgid "User has been created"
+msgstr ""
+
+#: restkit/tools/field_checker.py:173
+msgid "Request parames Invaild[{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:197 restkit/tools/field_checker.py:209
+msgid "Request fields missing[{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:216
+msgid "Request config error[{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:264 restkit/tools/field_checker.py:306
+#: restkit/tools/field_checker.py:558
+msgid "Field type error[{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:315
+msgid "Field Invaild, type error[int][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:327 restkit/tools/field_checker.py:354
+msgid "Field Invaild, input range error[{}][min={}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:332 restkit/tools/field_checker.py:359
+msgid "Field Invaild, input range error[{}][max={}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:342
+msgid "Field Invaild, type error[float][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:365
+msgid "Field Invaild[{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:377
+msgid "Field Invaild, type error[json][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:380
+msgid "Field Invaild, type error[{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:389
+msgid "Field Invaild, type error[string][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:396 restkit/tools/field_checker.py:420
+msgid "Field Invaild, input length error[{}][min={}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:401 restkit/tools/field_checker.py:425
+msgid "Field Invaild, input length error[{}][max={}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:407
+msgid "Field Invaild, format error[{}][regix:{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:434
+msgid "Field Invaild, type error[bool][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:444
+msgid "Field Invaild, type error[datetime][{}][YYYYmmDDTHHMMSS]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:453
+msgid "Field Invaild, type error[date][{}][YYYYmmDD]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:472
+msgid "ignore_keys invaild[{}][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:481
+msgid "Fields invaild, missing keys[{}][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:485
+msgid "Fields invaild, missing keys"
+msgstr ""
+
+#: restkit/tools/field_checker.py:499
+msgid "Fields are not allowed to be modified[{}][{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:503
+msgid "Fields are not allowed to be modified"
+msgstr ""
+
+#: restkit/tools/field_checker.py:516
+msgid "Fields Invaild, has invaild keys[{}]"
+msgstr ""
+
+#: restkit/tools/field_checker.py:576
+msgid "Fields Invaild, missing primary keys"
+msgstr ""
+
+#: restkit/tools/field_checker.py:623
+msgid "Query Results, To See Query Json Description"
+msgstr ""

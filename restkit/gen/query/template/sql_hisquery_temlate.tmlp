@@ -1,0 +1,196 @@
+# -*- coding: utf-8 -*-
+"""
+@create: 2017-02-22 15:57:32.
+
+@author: name
+
+@table: {{query_name}}
+"""
+import os
+import datetime
+from tornado import gen
+from restkit.tools.mongo_query import MongoQueryParse
+
+
+PRINT_SQL = os.environ.get('PRINT_SQL', None)
+
+
+QUERY_DEFINE = {
+    # fields list
+    'field_list': ({% for line in fields %}
+        '{{line["rename"].lower()}}',{% end %}
+    ),
+    # fields key -> sql key
+    'query_define': {
+{% for line in fields %}        '{{line["rename"].lower()}}': '{% raw escape_python(line["field"]).lower() %}',
+{% end %}
+    },
+    # allow query field
+    'query_list': ({% for line in fields %}
+        '{{line["rename"].lower()}}',{% end %}
+    ),
+    # cnname
+    'cnname_define': {
+{% for line in fields %}        '{{line["rename"].lower()}}': '{% raw line["cnname"].lower() %}',
+{% end %}
+    },
+    # field options
+    'options_define': {
+{% for line in fields %}        '{{line["rename"].lower()}}': {% raw str(line["options"]) %},  # noqa
+{% end %}
+    },
+    'group_by': ','.join([
+{% for line in group_by %}        '{{line.lower()}}',
+{% end %}
+    ]),
+    # default funcs
+    'default_change': {
+        'now()': 'Now()'
+    }
+}
+
+
+MQ_PARSE = MongoQueryParse(
+    QUERY_DEFINE['query_define'],
+    QUERY_DEFINE['options_define']
+)
+
+
+# ----------------------------------------------
+#        date sharding func
+# ----------------------------------------------
+
+
+def string2date(val):
+    """string2date."""
+    try:
+        return datetime.datetime.strptime(val, '%Y-%m-%d').date()
+    except ValueError:
+        pass
+    try:
+        return datetime.datetime.strptime(val, '%Y/%m/%d').date()
+    except ValueError:
+        pass
+    try:
+        return datetime.datetime.strptime(val, '%Y%m%d').date()
+    except Exception:
+        raise
+
+
+# ----------------------------------------------
+#        query sql
+# ----------------------------------------------
+
+
+def query_sql_string(where_data, permission_data=None,
+                     limit=None, sorts=None, lock=False,
+                     nolimit=False):
+    """query_sql_string.
+
+    where_data = {
+        '$and': [
+            {'$or': [{'price': 0.99, 'price2': 0.99}, {'price': 1.99}]},
+            {'$or': [{'sale': 'true'}, {'qty': {'$lt': 20}}]}
+        ]
+    }
+    permission_data = {
+        "name": {'$eq': "ab", '$ne': "ab", '$in': ['a', 'b', 'c']},
+        "logincode": {'$eq': "ab", '$ne': "ab", '$in': ['a', 'b', 'c']},
+        "re1": {'$regex': "^ab$"},
+        "re3": {'$sql': "^ab$"},
+        "re2": {'$exists': (' SELECT id FROM a = b AND a = %s', ['exists2']),
+                '$nexists': (' SELECT id FROM a = b AND a = %s', ['exists3'])},
+    }
+    sorts = {'rolename': 'desc'}
+    limit = [0, 100]
+    lock = true
+    """
+    assert isinstance(where_data, dict)
+    assert permission_data is None or isinstance(permission_data, dict)
+    assert limit is None or isinstance(limit, list) or len(limit) != 2
+    assert sorts is None or isinstance(sorts, dict)
+    sql_str = {% raw long_string_fromat(query_sql, 50, 15) %}
+
+    # conv where sql
+    if where_data:
+        where_str, parames_list = MQ_PARSE.parse(where_data)
+    else:
+        where_str = ''
+        parames_list = []
+
+    if permission_data is not None:
+        where_str2, parames_list2 = MQ_PARSE.parse(permission_data, False)
+        parames_list = parames_list + parames_list2
+        where_str = ' AND '.join(filter(lambda x: x, [where_str, where_str2]))
+
+    # concat where
+    if where_str:
+        sql_str += ' WHERE ' + where_str
+
+    # concat sorts
+    if sorts is not None and isinstance(sorts, dict) and len(sorts) > 0:
+        key_list = set(sorts.keys()).difference(
+            set(QUERY_DEFINE['query_list']))
+        if len(key_list) > 0:
+            raise Exception('key illegal')
+
+        sql_str += ' ORDER BY ' + ','.join(['%s %s' % (
+            sort_key, 'ASC' if sort_val.lower() == 'asc' else 'DESC')
+            for sort_key, sort_val in sorts.items()])
+
+    # concat group by
+    if QUERY_DEFINE['group_by']:
+        sql_str += ' GROUP BY ' + QUERY_DEFINE['group_by']
+
+    # concat limit
+    if limit is None:
+        limit = ['100', '0']
+    elif int(limit[1]) > 500:
+        limit = ['500', limit[0]]
+    else:
+        limit = [int(limit[1]), int(limit[0])]
+
+    if not nolimit:
+        sql_str += ' LIMIT %s OFFSET %s' % tuple(limit)
+
+    # query lock
+    if lock:
+        sql_str += ' FOR UPDATE'
+    return sql_str, parames_list
+
+
+@gen.coroutine
+def query_data(cursor, where_data, permission_data=None,
+               limit=None, sorts=None, lock=False,
+               nolimit=False):
+    """query_data.
+
+    where_data = {
+        '$and': [
+            {'$or': [{'price': 0.99, 'price2': 0.99}, {'price': 1.99}]},
+            {'$or': [{'sale': 'true'}, {'qty': {'$lt': 20}}]}
+        ]
+    }
+    permission_data = {
+        "name": {'$eq': "ab", '$ne': "ab", '$in': ['a', 'b', 'c']},
+        "logincode": {'$eq': "ab", '$ne': "ab", '$in': ['a', 'b', 'c']},
+        "re1": {'$regex': "^ab$"},
+        "re3": {'$sql': "^ab$"},
+        "re2": {'$exists': (' SELECT id FROM a = b AND a = %s', ['exists2']),
+                '$nexists': (' SELECT id FROM a = b AND a = %s', ['exists3'])},
+    }
+    sorts = {'rolename': 'desc'}
+    limit = [0, 100]
+    lock = true
+    """
+    sql_str, value_list = query_sql_string(
+        where_data, permission_data, limit, sorts, lock, nolimit)
+
+    if PRINT_SQL:
+        print(sql_str.replace('%s', '\'%s\'') % tuple(value_list))
+
+    cur = yield cursor.execute_sql(sql_str, value_list)
+    if cur.rowcount > 0:
+        raise gen.Return(cur.fetchall())
+    else:
+        raise gen.Return(None)

@@ -1,0 +1,11 @@
+{
+    "fields": [
+        {% raw ',\n        '.join(['{"field": "%(field)s", "rename": "%(rename)s", "cnname": "%(cnname)s", "options": %(options)s}' % row for row in fields]) %}
+    ],
+    "tables": [
+        {% raw ',\n        '.join(['{"field": "%(field)s", "rename": "%(rename)s", "join": "%(join)s", "on": "%(on)s"}' % row for row in tables]) %}
+    ],
+    "group_by": [
+        {% raw ',\n        '.join(['"%s"' % row for row in group_by]) %}
+    ]
+}

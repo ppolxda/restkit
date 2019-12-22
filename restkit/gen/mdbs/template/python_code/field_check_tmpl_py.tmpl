@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""
+@create: 2017-03-30 04:06:01.
+
+@author: name
+
+@desc: {{dbname}}
+"""
+from restkit.tools.string_unit import is_string
+from restkit.tools.string_unit import is_int
+from restkit.tools.string_unit import FeildInVaild
+from restkit.tools.field_checker import FeildCheck
+from restkit.tools.error_info import _
+from . import {{dbname}}_enums as enums
+
+
+class FeildCheckEnum(FeildCheck):
+
+    @staticmethod
+    def field_enum(enum_name, options, key, val):
+        assert isinstance(options, dict)
+        assert is_string(key)
+
+        if not isinstance(val, int):
+            raise FeildInVaild(
+                _('Field Invaild, type error[int][{}]').format(key))
+
+        if not is_int(val):
+            raise FeildInVaild(
+                _('Field Invaild, type error[int][{}]').format(key))
+
+        class_obj = getattr(enums, enum_name, None)
+
+        if not class_obj:
+            raise FeildInVaild(_('Enum Invaild[{}]').format(enum_name))
+
+        if class_obj.is_invaild(val):
+            raise FeildInVaild(
+                _('Enum Invaild[{}][{}][{}]').format(enum_name, key, val))
+{% for name, row in tables.items() %}
+
+class {{class_name(name)}}FeildCheck(FeildCheckEnum):
+    """{{class_name(name)}}FeildCheck."""
+
+    fields = {{"{"}}{% for key, val in row['fields'].items() %}
+        "{{key.lower()}}": {
+            "id": {{val['id']}},
+            "type": "{{val['type']}}",
+            "dbname": "{{dbname}}",
+            "comment": "{{val['comment'] if 'comment' in val else 'none'}}",
+            "options": {{"{"}}{% for op_key, op_val in val['options'].items() %}
+                "{{op_key}}": "{{str(op_val).lower()}}",{% end %}
+            }
+        },{% end %}
+    }
+
+    field_lowers = {{"{"}}{% for key, val in row['fields'].items() %}
+        "{{key.lower()}}": "{{key}}",{% end %}
+    }
+
+    field_keys = set(fields.keys())
+    field_update_keys = set(key for key, val in fields.items()
+                            if val['options']['update'] == 'true')
+    field_primary_keys = set(key for key, val in fields.items()
+                             if val['options']['key'] == 'true')
+{% end %}

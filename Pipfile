@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.doubanio.com/simple"
+verify_ssl = true
+
+[dev-packages]
+pydocstyle = "*"
+"pep8" = "*"
+"autopep8" = "*"
+sqlparse = "*"
+pylint = "*"
+"flake8" = "*"
+mock = "*"
+
+[packages]
+jk_commentjson = "*"
+cryptography = "*"
+pyinstaller = "*"
+sqlalchemy = "*"
+psycopg2 = "*"
+tornado = "*"
+redis = "*"
+pyjwt = "*"
+pid = "*"
+
+[requires]
+python_version = "3.7"

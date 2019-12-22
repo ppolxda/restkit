@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+"""
+@create: 2017-03-30 04:06:01.
+
+@author: name
+
+@desc: {{dbname}}
+"""
+{% for name, row in enums.items() %}
+{% if row['type'] != 'enum' %}{% continue %}{% end %}
+class {{name}}(object):
+    """{{name}} enum."""
+{% for key, val in row['fields'].items() %}
+    {{key.upper()}} = {{val}}  # {{get_comments(row, key)}}{% end %}
+
+    ENUM_LIST = [{% for key, val in row['fields'].items() %}
+        {{key.upper()}},{% end %}
+    ]
+
+    ENUM_COMMENTS = {{"{"}}{% for key, val in row['fields'].items() %}
+        {{key.upper()}}: u'{{get_comments(row, key)}}',{% end %}
+    }
+
+    @classmethod
+    def is_invaild(cls, val):
+        """is_invaild."""
+        if not isinstance(val, int):
+            raise TypeError('enum must int')
+
+        return int(val) not in cls.ENUM_LIST
+
+    @classmethod
+    def is_vaild(cls, val):
+        """is_vaild."""
+        if not isinstance(val, int):
+            raise TypeError('enum must int')
+
+        return int(val) in cls.ENUM_LIST
+
+    @classmethod
+    def get_comments(cls, val):
+        """get_comments."""
+        if not isinstance(val, int):
+            raise TypeError('enum must int')
+
+        return cls.ENUM_COMMENTS.get(int(val), 'unknow')
+{% end %}

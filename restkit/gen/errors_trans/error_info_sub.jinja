@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+@create: 2019-08-23 16:11:53.
+
+@author: name
+
+@desc: error_info
+"""
+import os
+import copy
+import gettext
+import functools
+
+from restkit.tools.error_info import TextString
+from restkit.tools.error_info import ErrorInfo as _ErrorInfo
+from restkit.tools.error_info import register_trans_by_name
+
+
+_ = TextString
+_T = TextString
+_N = TextString
+_L = TextString
+
+
+register_trans_by_name('{{service}}')
+
+
+class ErrorInfo(_ErrorInfo):
+
+    # Array Begin
+    {% for row in error_infos %}
+    {{ row[1] if row[1].startswith('ERROR_') else '_'.join(['ERROR', row[1]]) }} = '{{ row[0] }}'  # {{ row[2] }}  # noqa
+    {% end %}
+    # Array End
+
+    ERROR_DESCRIBE_SUB = {
+        # Array Begin
+        {% for row in error_infos %}
+        {{ row[1] if row[1].startswith('ERROR_') else '_'.join(['ERROR', row[1]]) }}: _(u'{{ row[2] }}'),  # noqa{% end %}
+        # Array End
+    }
+    ERROR_DESCRIBE = {**_ErrorInfo.ERROR_DESCRIBE, **ERROR_DESCRIBE_SUB}
+
+_ErrorInfo.append_errors(**ErrorInfo.ERROR_DESCRIBE_SUB)
+error_info = ErrorInfo()

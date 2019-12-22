@@ -1,0 +1,60 @@
+0,ERROR_SUCESS,Sucess
+1,ERROR_UNKNOW,Unknow error
+2,ERROR_DISABE_REQUEST,Disabe request
+3,ERROR_REQUEST_TIME,Request timeout
+4,ERROR_EXCEPTION,Exception[{desc}]
+5,ERROR_NOT_LOGGED,Account Unlogged
+6,ERROR_DN_EXCEPT,Database operation failed
+7,ERROR_UNKNOW_PAGE,Unknow page
+8,ERROR_DB_ERROR,Operation failed or data not change [{table}]
+9,ERROR_FIELD_CHECK_ERROR,Missing required fields
+10,ERROR_USER_IS_STOP,This account has been disabled
+11,ERROR_USER_IS_FREEZE,Password authentication has been temporarily disabled. Please wait and try again later.
+12,ERROR_USER_PASSWORD_ERROR,Password incorrect
+13,ERROR_USER_INFO_NOT_FOUND,User Not Found
+14,ERROR_IP_IS_STOP,Ip has been disabled
+15,ERROR_IP_IS_FREEZE,Ip has been freezed
+16,ERROR_IP_IS_LIMIT,Ip has been limit
+17,ERROR_INPUT_INFAILD,Input invaild[{desc}]
+18,ERROR_PRODUCT_INFAILD,Product invaild
+19,ERROR_API_DISABLE,This Api has been disabled
+20,ERROR_INPUT_INFO_INFAILD,Input invaild. data duplicate [{desc}]
+21,ERROR_INPUT_INFAILD_LOGINCODE,Input logincode invaild
+22,ERROR_INPUT_INFAILD_PWD,Input password invaild
+23,ERROR_INPUT_INFAILD_IDCARD,Input idcard invaild
+24,ERROR_INPUT_INFAILD_EAMIL,Input email invaild
+25,ERROR_INPUT_INFAILD_JSONCACHE,Input info invaild
+26,ERROR_OP_OBJECT_NOT_FOUND,Object not found[{table}]
+27,ERROR_USER_NOT_FOUND,User not found
+28,ERROR_REVIEW_INFO_NOT_FOUND,Review application not found
+29,ERROR_REVIEW_IS_NOT_WAITING,Review application has been reviewed
+30,ERROR_TRADE_ERROR,trade error[{text}]
+31,ERROR_REQ_FILE_SEVEICE_ERROR,file system error[{text}]
+32,ERROR_REPORT_TASE_MAX_LIMIT,eport export task too many. Please delete task
+33,ERROR_AUTH_ERROR,Auth error
+34,ERROR_AUTH_TOKEN_TIMEOUT,Auth Token error
+35,ERROR_REQ_SIGN_ERROR,Request sign error
+36,ERROR_SAFE_LIMIT_ERROR,Safe limit. Please sign in
+37,ERROR_PRODUCT_AUTH,Product api limit
+38,ERROR_PRODUCT_USER_NOT_FOUND,Product User not found
+39,ERROR_NOT_AUTH_LIMIT,Insufficient user rights to operate
+40,ERROR_VCODE_EXPIRE_INVAILD,Verification Code expired
+41,ERROR_VCODE_LIMIT_INVAILD,Verification Limit
+42,ERROR_VCODE_ERROR_INVAILD,Verification Code invaild
+43,ERROR_SENT_LIMIT,Send interval too short
+44,ERROR_SENT_TOO_MANY_LIMIT,"Sent code Too many times, Please watting {sec}"
+45,ERROR_SENT_TO_TOO_MANY_LIMIT,"{to} Sent code Too many times, Please watting {sec}"
+46,ERROR_INFO_IS_BINDED,"{info} info is binded"
+47,ERROR_INFO_IS_NOT_BINDED,"{info} info is not binded"
+48,ERROR_INFO_NOT_MATCH,"{info} not Match"
+49,ERROR_EMAIL_PHONE_ALL_UNBIND,"Can not unbind, Because Email or Phone must keep one"
+50,ERROR_OTPINFO_NOT_FOUNT,"Email or Phone not Found"
+51,ERROR_FORGET_PWD_OP_LIMIT,"Forget Password operate limit"
+52,ERROR_PASSWORD_DEC_ERROR,"Password decode Error"
+53,ERROR_PUBKEY_INVAILD,"Pubkey Invaild"
+54,ERROR_BZTOKEN_INVAILD,"Token Invaild"
+55,ERROR_BZTOKEN_EXPIRED,"Token Expired"
+56,ERROR_GCODE_INVAILD,"Gcode Invaild"
+57,ERROR_API_KEY_INVAILD,"Apikey Invaild"
+58,ERROR_KEY_INVAILD,"{key} Invaild"
+59,ERROR_USER_IS_CREATED,"User has been created"
