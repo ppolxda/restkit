@@ -96,11 +96,7 @@ def main():
     http_app.set_use_ssh_tag(settings.use_ssh)
     http_app.set_logger_name(PNAME)
     # http_app.set_prefix_uri(settings.prefix_uri)
-    # http_app.set_domain('192.168.1.126:9999')
-    # http_app.set_nginx_uri('/api')
     # http_app.set_use_ssh_tag(settings.use_ssh)
-    # http_app.set_prefix_uri(settings.prefix_uri)
-    # http_app.set_domain('192.168.1.24:10000')
 
     DEFAULT_SETTIONGS = config_settings()
     http_app.listen(settings.listen_port, **DEFAULT_SETTIONGS)
